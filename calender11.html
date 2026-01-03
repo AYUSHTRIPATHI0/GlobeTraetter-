@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Shared Itinerary View</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#191970",accent: "#00FFFF","background-light": "#F3F4F6",
+              "background-dark": "#0F172A","card-dark": "#1E293B",
+              "card-light": "#FFFFFF",
+              "text-primary-dark": "#E2E8F0",
+              "text-secondary-dark": "#94A3B8",
+              "text-primary-light": "#1E293B",
+              "text-secondary-light": "#64748B",
+            },
+            fontFamily: {
+              display: ["Inter", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.75rem",
+              xl: "1rem",
+              "2xl": "1.5rem",
+            },
+          },
+        },
+      };
+    </script>
+<style>.no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-text-primary-light dark:text-text-primary-dark font-display h-screen flex flex-col overflow-hidden antialiased">
+<header class="flex items-center justify-between px-5 py-4 bg-card-light dark:bg-card-dark border-b border-gray-200 dark:border-gray-800 shadow-sm z-10">
+<div class="flex items-center gap-3">
+<button class="p-2 -ml-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 text-text-secondary-light dark:text-text-secondary-dark transition">
+<span class="material-icons">arrow_back</span>
+</button>
+<h1 class="text-xl font-bold tracking-tight text-primary dark:text-white">GlobalTrotter</h1>
+</div>
+<button class="relative p-2 rounded-full bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 transition group">
+<span class="material-icons text-primary dark:text-accent">share</span>
+</button>
+</header>
+<div class="bg-background-light dark:bg-background-dark px-5 py-3 flex gap-3 overflow-x-auto no-scrollbar border-b border-gray-200 dark:border-gray-800">
+<div class="flex-1 min-w-[140px] relative">
+<span class="absolute left-3 top-1/2 -translate-y-1/2 material-icons text-gray-400 text-sm">search</span>
+<input class="w-full pl-9 pr-3 py-2 text-sm bg-white dark:bg-card-dark border border-gray-200 dark:border-gray-700 rounded-full focus:outline-none focus:ring-2 focus:ring-accent/50 dark:focus:ring-accent transition shadow-sm" placeholder="Search itinerary..." type="text"/>
+</div>
+<button class="flex items-center gap-1 px-4 py-2 bg-white dark:bg-card-dark border border-gray-200 dark:border-gray-700 rounded-full text-xs font-medium hover:border-primary dark:hover:border-accent whitespace-nowrap transition shadow-sm">
+<span class="material-icons text-sm">filter_list</span>
+            Filter
+        </button>
+<button class="flex items-center gap-1 px-4 py-2 bg-white dark:bg-card-dark border border-gray-200 dark:border-gray-700 rounded-full text-xs font-medium hover:border-primary dark:hover:border-accent whitespace-nowrap transition shadow-sm">
+<span class="material-icons text-sm">sort</span>
+            Sort
+        </button>
+</div>
+<main class="flex-1 overflow-y-auto bg-background-light dark:bg-background-dark p-4 pb-24 relative">
+<div class="flex items-center justify-between mb-6 px-2">
+<button class="p-2 hover:bg-gray-200 dark:hover:bg-gray-800 rounded-full transition">
+<span class="material-icons">chevron_left</span>
+</button>
+<h2 class="text-lg font-bold text-gray-900 dark:text-white">January 2024</h2>
+<button class="p-2 hover:bg-gray-200 dark:hover:bg-gray-800 rounded-full transition">
+<span class="material-icons">chevron_right</span>
+</button>
+</div>
+<div class="bg-card-light dark:bg-card-dark rounded-2xl shadow-lg border border-gray-100 dark:border-gray-800 overflow-hidden">
+<div class="grid grid-cols-7 border-b border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800/50">
+<div class="py-3 text-center text-[10px] font-bold tracking-widest text-text-secondary-light dark:text-text-secondary-dark uppercase">Sun</div>
+<div class="py-3 text-center text-[10px] font-bold tracking-widest text-text-secondary-light dark:text-text-secondary-dark uppercase">Mon</div>
+<div class="py-3 text-center text-[10px] font-bold tracking-widest text-text-secondary-light dark:text-text-secondary-dark uppercase">Tue</div>
+<div class="py-3 text-center text-[10px] font-bold tracking-widest text-text-secondary-light dark:text-text-secondary-dark uppercase">Wed</div>
+<div class="py-3 text-center text-[10px] font-bold tracking-widest text-text-secondary-light dark:text-text-secondary-dark uppercase">Thu</div>
+<div class="py-3 text-center text-[10px] font-bold tracking-widest text-text-secondary-light dark:text-text-secondary-dark uppercase">Fri</div>
+<div class="py-3 text-center text-[10px] font-bold tracking-widest text-text-secondary-light dark:text-text-secondary-dark uppercase">Sat</div>
+</div>
+<div class="grid grid-cols-7 auto-rows-fr text-xs">
+<div class="min-h-[80px] border-b border-r border-gray-100 dark:border-gray-800 bg-gray-50/50 dark:bg-gray-900/30"></div>
+<div class="min-h-[80px] border-b border-r border-gray-100 dark:border-gray-800 bg-gray-50/50 dark:bg-gray-900/30"></div>
+<div class="min-h-[80px] border-b border-r border-gray-100 dark:border-gray-800 bg-gray-50/50 dark:bg-gray-900/30"></div>
+<div class="min-h-[80px] border-b border-r border-gray-100 dark:border-gray-800 bg-gray-50/50 dark:bg-gray-900/30"></div>
+<div class="min-h-[80px] border-b border-r border-gray-100 dark:border-gray-800 bg-gray-50/50 dark:bg-gray-900/30"></div>
+<div class="min-h-[80px] border-b border-r border-gray-100 dark:border-gray-800 p-1 relative hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
+<span class="block text-right pr-1 text-gray-500">1</span>
+</div>
+<div class="min-h-[80px] border-b border-gray-100 dark:border-gray-800 p-1 relative hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
+<span class="block text-right pr-1 text-gray-500">2</span>
+</div>
+<div class="min-h-[80px] border-b border-r border-gray-100 dark:border-gray-800 p-1 relative hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
+<span class="block text-right pr-1 text-gray-500">3</span>
+</div>
+<div class="min-h-[80px] border-b border-r border-gray-100 dark:border-gray-800 p-1 relative bg-blue-50/50 dark:bg-primary/20">
+<span class="block text-right pr-1 font-medium text-primary dark:text-accent">4</span>
+<div class="mt-1 text-[9px] leading-tight font-semibold bg-primary text-white dark:bg-accent dark:text-primary rounded px-1 py-0.5 truncate shadow-sm">
+                        Paris Trip
+                    </div>
+</div>
+<div class="min-h-[80px] border-b border-r border-gray-100 dark:border-gray-800 p-1 relative bg-blue-50/50 dark:bg-primary/20">
+<span class="block text-right pr-1 text-gray-500">5</span>
+<div class="mt-1 h-1.5 w-full bg-primary/30 dark:bg-accent/30 rounded-full"></div>
+</div>
+<div class="min-h-[80px] border-b border-r border-gray-100 dark:border-gray-800 p-1 relative bg-blue-50/50 dark:bg-primary/20">
+<span class="block text-right pr-1 text-gray-500">6</span>
+<div class="mt-1 h-1.5 w-full bg-primary/30 dark:bg-accent/30 rounded-full"></div>
+</div>
+<div class="min-h-[80px] border-b border-r border-gray-100 dark:border-gray-800 p-1 relative bg-blue-50/50 dark:bg-primary/20">
+<span class="block text-right pr-1 text-gray-500">7</span>
+<div class="mt-1 h-1.5 w-full bg-primary/30 dark:bg-accent/30 rounded-full"></div>
+</div>
+<div class="min-h-[80px] border-b border-gray-100 dark:border-gray-800 p-1 relative bg-blue-50/50 dark:bg-primary/20">
+<span class="block text-right pr-1 text-gray-500">8</span>
+<div class="mt-1 h-1.5 w-full bg-primary/30 dark:bg-accent/30 rounded-full"></div>
+</div>
+<div class="min-h-[80px] border-b border-r border-gray-100 dark:border-gray-800 p-1 relative bg-blue-50/50 dark:bg-primary/20">
+<span class="block text-right pr-1 text-gray-500">9</span>
+<div class="mt-1 text-[9px] leading-tight font-semibold bg-primary/10 text-primary dark:bg-accent/10 dark:text-accent rounded px-1 py-0.5 truncate border border-primary/20 dark:border-accent/20">
+                        Louvre Tour
+                    </div>
+</div>
+<div class="min-h-[80px] border-b border-r border-gray-100 dark:border-gray-800 p-1 relative hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
+<span class="block text-right pr-1 text-gray-500">10</span>
+</div>
+<div class="min-h-[80px] border-b border-r border-gray-100 dark:border-gray-800 p-1 relative hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
+<span class="block text-right pr-1 text-gray-500">11</span>
+</div>
+<div class="min-h-[80px] border-b border-r border-gray-100 dark:border-gray-800 p-1 relative hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
+<span class="block text-right pr-1 text-gray-500">12</span>
+</div>
+<div class="min-h-[80px] border-b border-r border-gray-100 dark:border-gray-800 p-1 relative hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
+<span class="block text-right pr-1 text-gray-500">13</span>
+</div>
+<div class="min-h-[80px] border-b border-r border-gray-100 dark:border-gray-800 p-1 relative bg-purple-50/50 dark:bg-purple-900/20">
+<span class="block text-right pr-1 font-medium text-purple-700 dark:text-purple-300">14</span>
+<div class="mt-1 text-[9px] leading-tight font-semibold bg-purple-600 text-white dark:bg-purple-500 rounded px-1 py-0.5 truncate shadow-sm">
+                        NYC Getaway
+                    </div>
+</div>
+<div class="min-h-[80px] border-b border-r border-gray-100 dark:border-gray-800 p-1 relative bg-purple-50/50 dark:bg-purple-900/20">
+<span class="block text-right pr-1 text-gray-500">15</span>
+<div class="mt-1 h-1.5 w-full bg-purple-300 dark:bg-purple-600 rounded-full"></div>
+</div>
+<div class="min-h-[80px] border-b border-gray-100 dark:border-gray-800 p-1 relative bg-purple-50/50 dark:bg-purple-900/20">
+<span class="block text-right pr-1 text-gray-500">16</span>
+<div class="mt-1 h-1.5 w-full bg-purple-300 dark:bg-purple-600 rounded-full"></div>
+</div>
+<div class="min-h-[80px] border-b border-r border-gray-100 dark:border-gray-800 p-1 relative bg-orange-50/50 dark:bg-orange-900/20">
+<span class="block text-right pr-1 font-medium text-orange-700 dark:text-orange-300">17</span>
+<div class="mt-1 text-[9px] leading-tight font-semibold bg-orange-500 text-white dark:bg-orange-600 rounded px-1 py-0.5 truncate shadow-sm">
+                        Japan Adv...
+                    </div>
+</div>
+<div class="min-h-[80px] border-b border-r border-gray-100 dark:border-gray-800 p-1 relative bg-orange-50/50 dark:bg-orange-900/20">
+<span class="block text-right pr-1 text-gray-500">18</span>
+<div class="mt-1 h-1.5 w-full bg-orange-300 dark:bg-orange-700 rounded-full"></div>
+</div>
+<div class="min-h-[80px] border-b border-r border-gray-100 dark:border-gray-800 p-1 relative bg-orange-50/50 dark:bg-orange-900/20">
+<span class="block text-right pr-1 text-gray-500">19</span>
+<div class="mt-1 h-1.5 w-full bg-orange-300 dark:bg-orange-700 rounded-full"></div>
+</div>
+<div class="min-h-[80px] border-b border-r border-gray-100 dark:border-gray-800 p-1 relative bg-orange-50/50 dark:bg-orange-900/20">
+<span class="block text-right pr-1 text-gray-500">20</span>
+<div class="mt-1 h-1.5 w-full bg-orange-300 dark:bg-orange-700 rounded-full"></div>
+</div>
+<div class="min-h-[80px] border-b border-r border-gray-100 dark:border-gray-800 p-1 relative bg-orange-50/50 dark:bg-orange-900/20">
+<span class="block text-right pr-1 text-gray-500">21</span>
+<div class="mt-1 h-1.5 w-full bg-orange-300 dark:bg-orange-700 rounded-full"></div>
+</div>
+<div class="min-h-[80px] border-b border-r border-gray-100 dark:border-gray-800 p-1 relative bg-orange-50/50 dark:bg-orange-900/20">
+<span class="block text-right pr-1 text-gray-500">22</span>
+<div class="mt-1 h-1.5 w-full bg-orange-300 dark:bg-orange-700 rounded-full"></div>
+</div>
+<div class="min-h-[80px] border-b border-gray-100 dark:border-gray-800 p-1 relative bg-orange-50/50 dark:bg-orange-900/20">
+<span class="block text-right pr-1 text-gray-500">23</span>
+<div class="mt-1 text-[9px] leading-tight font-semibold bg-orange-500/10 text-orange-600 dark:text-orange-300 rounded px-1 py-0.5 truncate border border-orange-500/20">
+                        Kyoto Temple
+                    </div>
+</div>
+<div class="min-h-[80px] border-r border-gray-100 dark:border-gray-800 p-1 relative hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
+<span class="block text-right pr-1 text-gray-500">24</span>
+</div>
+<div class="min-h-[80px] border-r border-gray-100 dark:border-gray-800 p-1 relative hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
+<span class="block text-right pr-1 text-gray-500">25</span>
+</div>
+<div class="min-h-[80px] border-r border-gray-100 dark:border-gray-800 p-1 relative hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
+<span class="block text-right pr-1 text-gray-500">26</span>
+</div>
+<div class="min-h-[80px] border-r border-gray-100 dark:border-gray-800 p-1 relative bg-emerald-50/50 dark:bg-emerald-900/20">
+<span class="block text-right pr-1 font-medium text-emerald-700 dark:text-emerald-300">27</span>
+<div class="mt-1 text-[9px] leading-tight font-semibold bg-emerald-600 text-white dark:bg-emerald-500 rounded px-1 py-0.5 truncate shadow-sm">
+                        Nature Hike
+                    </div>
+</div>
+<div class="min-h-[80px] border-r border-gray-100 dark:border-gray-800 p-1 relative bg-emerald-50/50 dark:bg-emerald-900/20">
+<span class="block text-right pr-1 text-gray-500">28</span>
+<div class="mt-1 h-1.5 w-full bg-emerald-300 dark:bg-emerald-700 rounded-full"></div>
+</div>
+<div class="min-h-[80px] border-r border-gray-100 dark:border-gray-800 p-1 relative hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
+<span class="block text-right pr-1 text-gray-500">29</span>
+</div>
+<div class="min-h-[80px] p-1 relative hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
+<span class="block text-right pr-1 text-gray-500">30</span>
+</div>
+</div>
+</div>
+<div class="mt-6 p-4 rounded-xl bg-gradient-to-r from-primary to-blue-600 dark:from-primary dark:to-[#0A2472] text-white shadow-xl">
+<div class="flex items-start justify-between">
+<div>
+<h3 class="font-bold text-lg mb-1">Paris Trip Budget</h3>
+<p class="text-xs text-blue-100 mb-3">You are currently under budget by $320.</p>
+<button class="bg-accent text-primary dark:bg-accent dark:text-primary px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-wider hover:opacity-90 transition shadow-sm">
+                        View Details
+                    </button>
+</div>
+<div class="bg-white/10 p-2 rounded-lg">
+<span class="material-icons text-3xl text-accent">savings</span>
+</div>
+</div>
+</div>
+</main>
+<button class="fixed bottom-6 right-6 w-14 h-14 bg-accent hover:bg-[#66FFFF] rounded-full shadow-2xl flex items-center justify-center text-primary dark:text-primary z-20 transition-transform transform hover:scale-105 active:scale-95">
+<span class="material-icons text-2xl font-bold">add</span>
+</button>
+<nav class="fixed bottom-0 w-full bg-card-light dark:bg-card-dark border-t border-gray-200 dark:border-gray-800 pb-safe pt-2 px-6 flex justify-between items-center z-20">
+<button class="flex flex-col items-center gap-1 p-2 text-primary dark:text-accent">
+<span class="material-icons text-2xl">calendar_today</span>
+<span class="text-[10px] font-medium">Calendar</span>
+</button>
+<button class="flex flex-col items-center gap-1 p-2 text-text-secondary-light dark:text-text-secondary-dark hover:text-primary dark:hover:text-white transition">
+<span class="material-icons text-2xl">explore</span>
+<span class="text-[10px] font-medium">Explore</span>
+</button>
+<button class="flex flex-col items-center gap-1 p-2 text-text-secondary-light dark:text-text-secondary-dark hover:text-primary dark:hover:text-white transition">
+<span class="material-icons text-2xl">account_balance_wallet</span>
+<span class="text-[10px] font-medium">Budget</span>
+</button>
+<button class="flex flex-col items-center gap-1 p-2 text-text-secondary-light dark:text-text-secondary-dark hover:text-primary dark:hover:text-white transition">
+<span class="material-icons text-2xl">person</span>
+<span class="text-[10px] font-medium">Profile</span>
+</button>
+</nav>
+<div class="h-[70px] bg-card-light dark:bg-card-dark w-full fixed bottom-0 -z-10"></div> 
+
+</body></html>

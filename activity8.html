@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Activity Search Screen</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#0F172A", // Midnight Blue - acting as a deep background/theme anchor
+                        accent: "#06B6D4", // Aqua - for interactions
+                        "background-light": "#F8FAFC",
+                        "background-dark": "#0F172A", // Midnight Blue as main dark bg
+                        "card-light": "#FFFFFF",
+                        "card-dark": "#1E293B",
+                        "text-primary-light": "#1E293B",
+                        "text-primary-dark": "#F8FAFC",
+                        "text-secondary-light": "#64748B",
+                        "text-secondary-dark": "#94A3B8",
+                    },
+                    fontFamily: {
+                        display: ["Inter", "sans-serif"],
+                        sans: ["Inter", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.75rem",
+                    },
+                },
+            },
+        };
+    </script>
+<style>.scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-sans transition-colors duration-200 min-h-screen flex justify-center">
+<div class="w-full max-w-md bg-background-light dark:bg-background-dark min-h-screen flex flex-col relative shadow-2xl overflow-hidden">
+
+<header class="px-5 py-4 flex items-center justify-between">
+<div class="flex items-center space-x-2">
+<button class="p-2 -ml-2 rounded-full hover:bg-gray-200 dark:hover:bg-slate-800 transition-colors">
+<span class="material-icons-round text-text-primary-light dark:text-text-primary-dark">arrow_back_ios_new</span>
+</button>
+<h1 class="text-xl font-bold text-text-primary-light dark:text-text-primary-dark tracking-tight">GlobalTrotter</h1>
+</div>
+<button class="relative p-2 rounded-full hover:bg-gray-200 dark:hover:bg-slate-800 transition-colors">
+<span class="material-icons-round text-text-primary-light dark:text-text-primary-dark">account_circle</span>
+</button>
+</header>
+<div class="px-5 pb-2">
+<div class="relative mb-4">
+<span class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+<span class="material-icons-round text-text-secondary-light dark:text-text-secondary-dark">search</span>
+</span>
+<input class="block w-full pl-10 pr-3 py-3 rounded-xl border-none ring-1 ring-gray-200 dark:ring-slate-700 bg-card-light dark:bg-card-dark text-text-primary-light dark:text-text-primary-dark placeholder-text-secondary-light dark:placeholder-text-secondary-dark focus:ring-2 focus:ring-accent transition shadow-sm" placeholder="Search activities (e.g., Paragliding)" type="text"/>
+</div>
+<div class="flex space-x-3 overflow-x-auto scrollbar-hide pb-2">
+<button class="flex items-center space-x-1.5 bg-card-light dark:bg-card-dark border border-gray-200 dark:border-slate-700 px-3 py-1.5 rounded-lg text-sm font-medium text-text-secondary-light dark:text-text-secondary-dark whitespace-nowrap active:bg-accent active:text-white active:border-accent transition-colors">
+<span class="material-icons-round text-base">layers</span>
+<span>Group by</span>
+</button>
+<button class="flex items-center space-x-1.5 bg-card-light dark:bg-card-dark border border-gray-200 dark:border-slate-700 px-3 py-1.5 rounded-lg text-sm font-medium text-text-secondary-light dark:text-text-secondary-dark whitespace-nowrap active:bg-accent active:text-white active:border-accent transition-colors">
+<span class="material-icons-round text-base">filter_list</span>
+<span>Filter</span>
+</button>
+<button class="flex items-center space-x-1.5 bg-card-light dark:bg-card-dark border border-gray-200 dark:border-slate-700 px-3 py-1.5 rounded-lg text-sm font-medium text-text-secondary-light dark:text-text-secondary-dark whitespace-nowrap active:bg-accent active:text-white active:border-accent transition-colors">
+<span class="material-icons-round text-base">sort</span>
+<span>Sort by...</span>
+</button>
+</div>
+</div>
+<div class="flex-1 overflow-y-auto px-5 pt-2 pb-24">
+<h2 class="text-lg font-semibold text-text-primary-light dark:text-text-primary-dark mb-4">Results</h2>
+<div class="space-y-4">
+<div class="group bg-card-light dark:bg-card-dark rounded-2xl shadow-sm border border-gray-100 dark:border-slate-800 p-4 active:scale-[0.99] transition-all duration-200 cursor-pointer hover:border-accent dark:hover:border-accent">
+<div class="flex gap-4">
+<div class="w-24 h-24 rounded-xl overflow-hidden flex-shrink-0 bg-gray-100 dark:bg-slate-700 relative">
+<img alt="Paragliding over mountains" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCdx4vqEtbVK5u8tn6rmsxsvDKHT5rxa57zwYB0sTIFNAAFFiH5KQD3WlTyMM44WUP8Kz5gbwaJbm8gX3Kp4MpNc7-j7nPnKC8n9GzbVJQATse0HSb3hWn4nqli-VVMdkIjU4Yc_k0rMf11FCgVYh06BkQONo8La_tLE0IVLKx-lbPZzo13O7EoWo023v2Ar8M7nTmAMVHic4_h0h6qmCLVUAd5F0ui0sPoaFcw0TKCTskgiYvZuTgGLGRftOPLksymmgiqNyIqjPs"/>
+<div class="absolute top-1 right-1 bg-black/50 backdrop-blur-sm rounded-md px-1.5 py-0.5">
+<span class="text-[10px] font-bold text-white flex items-center">
+<span class="material-icons-round text-[10px] mr-0.5 text-accent">star</span> 4.9
+                                </span>
+</div>
+</div>
+<div class="flex-1 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start">
+<h3 class="text-base font-bold text-text-primary-light dark:text-text-primary-dark leading-tight">Tandem Paragliding</h3>
+<button class="text-text-secondary-light dark:text-text-secondary-dark hover:text-accent">
+<span class="material-icons-round text-lg">favorite_border</span>
+</button>
+</div>
+<p class="text-xs text-text-secondary-light dark:text-text-secondary-dark mt-1 flex items-center">
+<span class="material-icons-round text-sm mr-1">place</span> Interlaken, Switzerland
+                                </p>
+</div>
+<div class="flex items-end justify-between mt-2">
+<div class="flex flex-col">
+<span class="text-xs text-text-secondary-light dark:text-text-secondary-dark">Duration</span>
+<span class="text-sm font-medium text-text-primary-light dark:text-text-primary-dark">1.5 Hours</span>
+</div>
+<div class="text-right">
+<span class="text-lg font-bold text-accent">$180</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="group bg-card-light dark:bg-card-dark rounded-2xl shadow-sm border border-gray-100 dark:border-slate-800 p-4 active:scale-[0.99] transition-all duration-200 cursor-pointer hover:border-accent dark:hover:border-accent">
+<div class="flex gap-4">
+<div class="w-24 h-24 rounded-xl overflow-hidden flex-shrink-0 bg-gray-100 dark:bg-slate-700 relative">
+<img alt="Scuba diving underwater" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbtGyKKrHFEuIcuBsesQl5r9_a1cA0chr-ffm8xLTvlqXOOQmtQRti0ZFvbllS1dC3LASIyXf_9R5780_fFMoyeCTjn5Np4JAicj_O0dYQfPQKUosASGoi6SYP0QIfn2xWUm87TUl1ZMVBwdvF0I7fFxSN0kNXTypkXFex4VtLE4N_SJEVXPZAp8LFjqElHXL0HU2p9SMDUseo-DNvZxN9yNJfP6fw1CHwbdsz-NOMoQ-ZBxrapOpnqaWdW4L_rgdF2zDLoJeg5hQ"/>
+<div class="absolute top-1 right-1 bg-black/50 backdrop-blur-sm rounded-md px-1.5 py-0.5">
+<span class="text-[10px] font-bold text-white flex items-center">
+<span class="material-icons-round text-[10px] mr-0.5 text-accent">star</span> 4.7
+                                </span>
+</div>
+</div>
+<div class="flex-1 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start">
+<h3 class="text-base font-bold text-text-primary-light dark:text-text-primary-dark leading-tight">Reef Scuba Diving</h3>
+<button class="text-text-secondary-light dark:text-text-secondary-dark hover:text-accent">
+<span class="material-icons-round text-lg">favorite_border</span>
+</button>
+</div>
+<p class="text-xs text-text-secondary-light dark:text-text-secondary-dark mt-1 flex items-center">
+<span class="material-icons-round text-sm mr-1">place</span> Cairns, Australia
+                                </p>
+</div>
+<div class="flex items-end justify-between mt-2">
+<div class="flex flex-col">
+<span class="text-xs text-text-secondary-light dark:text-text-secondary-dark">Duration</span>
+<span class="text-sm font-medium text-text-primary-light dark:text-text-primary-dark">4 Hours</span>
+</div>
+<div class="text-right">
+<span class="text-lg font-bold text-accent">$120</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="group bg-card-light dark:bg-card-dark rounded-2xl shadow-sm border border-gray-100 dark:border-slate-800 p-4 active:scale-[0.99] transition-all duration-200 cursor-pointer hover:border-accent dark:hover:border-accent">
+<div class="flex gap-4">
+<div class="w-24 h-24 rounded-xl overflow-hidden flex-shrink-0 bg-gray-100 dark:bg-slate-700 relative">
+<img alt="Hiking trail in mountains" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZwdW6j5UoyfXjqA8BfJjDksrlBmOh3KTjDsPLUNZ-NwvdaYC9Fw9M0qdPjYv4K-IWFVqMa0krhBYkt8l-pwUYk_y6xF7juZOJPhT3Ea7QbDZO-AyjNDNGx8w9kYZMgMVLxLVNTqW4dcOJXf77Q1Ynrx-khiTLOZXEeH9OhzcZysZdmroA48Pbp6ncjuH3fBT7NqoCkohwr7LbMQYR1aRB0R6R-gDNEhVANeLbq905WnccqznPfTGoQdX9cV1LUlGkfNw4Nc7zrQg"/>
+<div class="absolute top-1 right-1 bg-black/50 backdrop-blur-sm rounded-md px-1.5 py-0.5">
+<span class="text-[10px] font-bold text-white flex items-center">
+<span class="material-icons-round text-[10px] mr-0.5 text-accent">star</span> 4.5
+                                </span>
+</div>
+</div>
+<div class="flex-1 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start">
+<h3 class="text-base font-bold text-text-primary-light dark:text-text-primary-dark leading-tight">Sunset Mountain Hike</h3>
+<button class="text-text-secondary-light dark:text-text-secondary-dark hover:text-accent">
+<span class="material-icons-round text-lg">favorite_border</span>
+</button>
+</div>
+<p class="text-xs text-text-secondary-light dark:text-text-secondary-dark mt-1 flex items-center">
+<span class="material-icons-round text-sm mr-1">place</span> Cape Town, SA
+                                </p>
+</div>
+<div class="flex items-end justify-between mt-2">
+<div class="flex flex-col">
+<span class="text-xs text-text-secondary-light dark:text-text-secondary-dark">Duration</span>
+<span class="text-sm font-medium text-text-primary-light dark:text-text-primary-dark">3 Hours</span>
+</div>
+<div class="text-right">
+<span class="text-lg font-bold text-accent">$45</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="group bg-card-light dark:bg-card-dark rounded-2xl shadow-sm border border-gray-100 dark:border-slate-800 p-4 active:scale-[0.99] transition-all duration-200 cursor-pointer hover:border-accent dark:hover:border-accent">
+<div class="flex gap-4">
+<div class="w-24 h-24 rounded-xl overflow-hidden flex-shrink-0 bg-gray-100 dark:bg-slate-700 relative">
+<img alt="Kayaking on calm water" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBs9vaLxPnDBEY55CU5r3ESBg2r40N1nq5Q5kWkCALR6shPkSG69kBejE6hnbMO7HCejWs1vrHoxzmW8FeDdE44c3vmfFKHmp9Ml15iYxjnZC_rgS97-rtwK7qMkaL0AcAhlkptOlgcUiyo_4VU2CtYx82gqLMtV--0SiH_q8V22up_TtKflymkku0sFEYzSjC8eto12ilg-Hm5dnrJeToKV1UjoASpBd7uBs5b7o4ihP0uKGKGh5rkFR7pXbZoTleAYcL18GsJIKs"/>
+<div class="absolute top-1 right-1 bg-black/50 backdrop-blur-sm rounded-md px-1.5 py-0.5">
+<span class="text-[10px] font-bold text-white flex items-center">
+<span class="material-icons-round text-[10px] mr-0.5 text-accent">star</span> 4.8
+                                </span>
+</div>
+</div>
+<div class="flex-1 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start">
+<h3 class="text-base font-bold text-text-primary-light dark:text-text-primary-dark leading-tight">Lake Kayaking Tour</h3>
+<button class="text-text-secondary-light dark:text-text-secondary-dark hover:text-accent">
+<span class="material-icons-round text-lg">favorite_border</span>
+</button>
+</div>
+<p class="text-xs text-text-secondary-light dark:text-text-secondary-dark mt-1 flex items-center">
+<span class="material-icons-round text-sm mr-1">place</span> Banff, Canada
+                                </p>
+</div>
+<div class="flex items-end justify-between mt-2">
+<div class="flex flex-col">
+<span class="text-xs text-text-secondary-light dark:text-text-secondary-dark">Duration</span>
+<span class="text-sm font-medium text-text-primary-light dark:text-text-primary-dark">2 Hours</span>
+</div>
+<div class="text-right">
+<span class="text-lg font-bold text-accent">$65</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="group bg-card-light dark:bg-card-dark rounded-2xl shadow-sm border border-gray-100 dark:border-slate-800 p-4 active:scale-[0.99] transition-all duration-200 cursor-pointer hover:border-accent dark:hover:border-accent">
+<div class="flex gap-4">
+<div class="w-24 h-24 rounded-xl overflow-hidden flex-shrink-0 bg-gray-100 dark:bg-slate-700 relative">
+<img alt="Rainforest zipline" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAv0rWYgcOOrF4Ulu5gc6aA_SrzlOL_O4MPpNuRGvvcGipRwgBeSRi9xMf6ZTcuNqkNEvH6H9tFwVxnx5_08vDNMMt4YI8B9RewvRgPjLtTqrs3ETB3s9TMGoPRV8H4jP2Lq-SUOIM1u-ifZwqGuf7T1E9L_GikZm-TgNAlTaKFkcBjMW_Wf4WQhGLMgZ7eoDZkjCZOQ5HpOS-N25rD3WeUcKB1aynVYjB_04q9LyELbwZvmay4SLTLnfJUO8JPLjyB3deB-HjL500"/>
+<div class="absolute top-1 right-1 bg-black/50 backdrop-blur-sm rounded-md px-1.5 py-0.5">
+<span class="text-[10px] font-bold text-white flex items-center">
+<span class="material-icons-round text-[10px] mr-0.5 text-accent">star</span> 4.6
+                                </span>
+</div>
+</div>
+<div class="flex-1 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start">
+<h3 class="text-base font-bold text-text-primary-light dark:text-text-primary-dark leading-tight">Rainforest Ziplining</h3>
+<button class="text-text-secondary-light dark:text-text-secondary-dark hover:text-accent">
+<span class="material-icons-round text-lg">favorite_border</span>
+</button>
+</div>
+<p class="text-xs text-text-secondary-light dark:text-text-secondary-dark mt-1 flex items-center">
+<span class="material-icons-round text-sm mr-1">place</span> Costa Rica
+                                </p>
+</div>
+<div class="flex items-end justify-between mt-2">
+<div class="flex flex-col">
+<span class="text-xs text-text-secondary-light dark:text-text-secondary-dark">Duration</span>
+<span class="text-sm font-medium text-text-primary-light dark:text-text-primary-dark">3 Hours</span>
+</div>
+<div class="text-right">
+<span class="text-lg font-bold text-accent">$95</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="absolute bottom-0 w-full bg-card-light dark:bg-card-dark border-t border-gray-200 dark:border-slate-800 px-6 py-3 flex justify-between items-center z-20">
+<button class="flex flex-col items-center text-accent">
+<span class="material-icons-round text-2xl">search</span>
+<span class="text-[10px] font-medium mt-1">Search</span>
+</button>
+<button class="flex flex-col items-center text-text-secondary-light dark:text-text-secondary-dark hover:text-accent transition-colors">
+<span class="material-icons-round text-2xl">favorite</span>
+<span class="text-[10px] font-medium mt-1">Saved</span>
+</button>
+<button class="flex flex-col items-center text-text-secondary-light dark:text-text-secondary-dark hover:text-accent transition-colors">
+<span class="material-icons-round text-2xl">airplane_ticket</span>
+<span class="text-[10px] font-medium mt-1">Trips</span>
+</button>
+<button class="flex flex-col items-center text-text-secondary-light dark:text-text-secondary-dark hover:text-accent transition-colors">
+<span class="material-icons-round text-2xl">person</span>
+<span class="text-[10px] font-medium mt-1">Profile</span>
+</button>
+</div>
+</div>
+<div class="fixed bottom-6 right-6 z-50">
+<button class="bg-accent text-white p-4 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all transform flex items-center justify-center" onclick="document.documentElement.classList.toggle('dark')">
+<span class="material-icons-round">dark_mode</span>
+</button>
+</div>
+
+</body></html>

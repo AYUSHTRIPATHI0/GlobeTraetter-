@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>GlobalTrotter - User Profile</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&amp;family=Inter:wght@300;400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet"/>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              // Using Aqua as the interactive/accent color as requested
+              primary: "#22d3ee", // Cyan-400
+              "primary-dark": "#06b6d4", // Cyan-500 for hover states
+              // Light mode background
+              "background-light": "#f8fafc", // Slate-50
+              "surface-light": "#ffffff",
+              // Dark mode background - Midnight Blue feel
+              "background-dark": "#020617", // Very dark slate/blue
+              "surface-dark": "#1e293b", // Slate-800 for cards
+            },
+            fontFamily: {
+              display: ["Montserrat", "sans-serif"],
+              body: ["Inter", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.5rem",
+              'xl': '1rem',
+              '2xl': '1.5rem',
+            },
+          },
+        },
+      };
+    </script>
+<style>.no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-800 dark:text-slate-100 font-body min-h-screen transition-colors duration-300">
+<nav class="sticky top-0 z-50 bg-background-light/90 dark:bg-background-dark/90 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 px-6 py-4 flex justify-between items-center">
+<div class="flex items-center gap-2">
+<span class="material-icons-round text-primary text-3xl">public</span>
+<h1 class="font-display font-bold text-xl tracking-wide">GlobalTrotter</h1>
+</div>
+<button class="p-2 rounded-full hover:bg-slate-200 dark:hover:bg-slate-800 transition">
+<span class="material-icons-round text-slate-600 dark:text-slate-300">settings</span>
+</button>
+</nav>
+<main class="max-w-md mx-auto pb-20">
+<section class="px-6 py-8">
+<div class="flex flex-col sm:flex-row items-center sm:items-start gap-6">
+<div class="relative shrink-0">
+<div class="w-28 h-28 rounded-full p-1 bg-gradient-to-tr from-primary to-blue-600">
+<img alt="User Profile Picture" class="w-full h-full object-cover rounded-full border-4 border-background-light dark:border-background-dark" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD69z5AnYOJOBN7afgseA8CZOWOMfPT-c09QLRqy3Kd0KjFqElJxAWtLg_bPtj2K3k2kGnhAyZtQCxJMb-TEhW1oM3zTdFURW43B1oJolYCnkSn2yLhlM96UvlN3Vz_gkbDNEtJoyr3UV1CzmoT4PP0kJYQ_UY8VS0f83mqFajcINtIRj-ErD3x8nApCANaZC5KtXwziXVYWVP80xdnIsECFJrNfZmnKtmLSXQ7cPFY0S-h8JFcA07D-s9JE1buhBcYoXDX7eiuhMk"/>
+</div>
+<button class="absolute bottom-1 right-1 bg-surface-light dark:bg-surface-dark p-1.5 rounded-full shadow-lg border border-slate-200 dark:border-slate-700 text-primary">
+<span class="material-icons-round text-sm">edit</span>
+</button>
+</div>
+<div class="flex-1 text-center sm:text-left space-y-3">
+<div>
+<h2 class="font-display font-bold text-2xl">Elena R.</h2>
+<p class="text-sm text-slate-500 dark:text-slate-400 flex items-center justify-center sm:justify-start gap-1">
+<span class="material-icons-round text-base">location_on</span>
+                            San Francisco, CA
+                        </p>
+</div>
+<p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                        Digital nomad exploring the world one coffee shop at a time. ✈️ ☕️
+                    </p>
+<div class="flex gap-3 justify-center sm:justify-start pt-1">
+<button class="px-4 py-2 bg-primary/10 hover:bg-primary/20 text-primary dark:text-primary rounded-full text-sm font-semibold transition flex items-center gap-2 border border-primary/20">
+<span class="material-icons-round text-sm">edit_note</span>
+                            Edit Profile
+                        </button>
+<button class="p-2 text-slate-400 hover:text-slate-600 dark:hover:text-white transition">
+<span class="material-icons-round">share</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<div class="h-px w-full bg-slate-200 dark:bg-slate-800 my-2"></div>
+<section class="mt-6">
+<div class="px-6 mb-4 flex justify-between items-end">
+<h3 class="font-display font-semibold text-lg text-slate-800 dark:text-slate-100">Preplanned Trips</h3>
+<a class="text-xs font-medium text-primary hover:text-primary-dark transition" href="#">See All</a>
+</div>
+<div class="flex overflow-x-auto no-scrollbar px-6 gap-4 pb-4">
+<div class="shrink-0 w-44 group relative rounded-2xl overflow-hidden shadow-lg bg-surface-light dark:bg-surface-dark border border-slate-100 dark:border-slate-800">
+<div class="h-56 relative">
+<img alt="Kyoto mountain view" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwIfn02ZnJwfzRCoZWOrUMk0LYqFyz2dYOokN6tiIFkghUYYWdJIPWjEJf2cjgH_SLwdsm0mIj73p2DWtfbMltFdSPqGBgHrLrFs2UdAmIPSbecCxTEZe5LRHSvyyUk-z5wiCSA7XqnuzQBDBhZZjHed1_QgfmQIPr9HtRskkd_tytczt63i0SK-De9QP8Uux-AGfmik1ZXkCBYTEEsIegBzWSpqI0xyCcdsU3lTTFFRPJWISTII4l44xoqmMRsz46kvZgS8CC6GA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+<div class="absolute bottom-0 left-0 right-0 p-4">
+<span class="text-xs font-bold text-primary mb-1 block">OCT 2023</span>
+<h4 class="font-display font-bold text-white text-lg leading-tight mb-3">Kyoto Drift</h4>
+<button class="w-full py-1.5 bg-primary/20 hover:bg-primary text-primary hover:text-black backdrop-blur-sm border border-primary/50 rounded-lg text-xs font-bold uppercase tracking-wider transition-all duration-300">
+                                View
+                            </button>
+</div>
+</div>
+</div>
+<div class="shrink-0 w-44 group relative rounded-2xl overflow-hidden shadow-lg bg-surface-light dark:bg-surface-dark border border-slate-100 dark:border-slate-800">
+<div class="h-56 relative">
+<img alt="Paris street" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDaB5H5jV9yZ4vW8hxar-rwsGl_Btlob8NbHHx5khKl4henePDWbyY_cGpBkbkwrVIKxYg6aylmYa67bIVG1qrhgkHU9pX5sQYSyfF1_WFH0k_reVUQqC2x07XfJAeDIbVU-7W775sGLTe8u_IBYWSxKRAWuoIM01XwLd09SrDEfF_nb6xCTNQx1WQd-Zej6fAxTabHQ5Pv11Dgzd9GJnTXICxGDjQkkuauQ5GCHDe-5qFAKklgL7UePSnzVdQLaamBU34l65M1ogA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+<div class="absolute bottom-0 left-0 right-0 p-4">
+<span class="text-xs font-bold text-primary mb-1 block">DEC 2023</span>
+<h4 class="font-display font-bold text-white text-lg leading-tight mb-3">Paris Light</h4>
+<button class="w-full py-1.5 bg-primary/20 hover:bg-primary text-primary hover:text-black backdrop-blur-sm border border-primary/50 rounded-lg text-xs font-bold uppercase tracking-wider transition-all duration-300">
+                                View
+                            </button>
+</div>
+</div>
+</div>
+<div class="shrink-0 w-44 group relative rounded-2xl overflow-hidden shadow-lg bg-surface-light dark:bg-surface-dark border border-slate-100 dark:border-slate-800">
+<div class="h-56 relative">
+<img alt="Bali scenery" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5XirPuF619pZZFinKBvlJ35zDzRUzSWWv0XNCfEj0aerfgdP2N9rIWaPDHyDmuXEJuZIQBXi1rrowhrJVNCh_dgRF7ixwVWbtSSih2iSl2FF27Q8j9ofn2RDAGUcGhotAEEtoKZzys_vEBxi6lnc6tb-k6Jxn2NhBIHemWaLpglURJrLodD20EzH5lm8wpiCYlAeuk6HBoBh1pgQOUrheDoFiq9pwc6On4dwCwZAl65m9LwrZwLSAEum_XJTIdLLrb_xQJuox_74"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+<div class="absolute bottom-0 left-0 right-0 p-4">
+<span class="text-xs font-bold text-primary mb-1 block">FEB 2024</span>
+<h4 class="font-display font-bold text-white text-lg leading-tight mb-3">Bali Retreat</h4>
+<button class="w-full py-1.5 bg-primary/20 hover:bg-primary text-primary hover:text-black backdrop-blur-sm border border-primary/50 rounded-lg text-xs font-bold uppercase tracking-wider transition-all duration-300">
+                                View
+                            </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="mt-8">
+<div class="px-6 mb-4 flex justify-between items-end">
+<h3 class="font-display font-semibold text-lg text-slate-800 dark:text-slate-100">Previous Trips</h3>
+<a class="text-xs font-medium text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition" href="#">See All</a>
+</div>
+<div class="flex overflow-x-auto no-scrollbar px-6 gap-4 pb-4">
+<div class="shrink-0 w-44 group relative rounded-2xl overflow-hidden shadow-lg bg-surface-light dark:bg-surface-dark border border-slate-100 dark:border-slate-800">
+<div class="h-56 relative">
+<img alt="Dubai skyline" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBC0u8bLN7CgUPl6V8VXF-txFyjqJtBBupQ-MqIZok32q9i5gpHXGCdUek1intuUv-rrh9SfJS_AEqJi-yJZ0H133_m9EChyhemz9eZ274GiA-XAmzR8gbZbEXzYQXxvM-O6ins6btTxqYiGX1AiH6HMDqoYNx77SfXQFY5DxcUYn1gJUmLY8RLQ0w0goNd2nPeUlOCSZghRo8Bd9yY-Ldt7gTa-Gk1kA1q7nNuyK2vqh-gf5T7HAHPi1j5hKVnD-P7DgJ2GOyeuRU"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
+<div class="absolute bottom-0 left-0 right-0 p-4">
+<div class="flex items-center gap-1 mb-1">
+<span class="material-icons-round text-xs text-green-400">check_circle</span>
+<span class="text-xs font-bold text-slate-300">COMPLETED</span>
+</div>
+<h4 class="font-display font-bold text-white text-lg leading-tight mb-3">Dubai 2022</h4>
+<button class="w-full py-1.5 bg-slate-700/50 hover:bg-primary hover:text-black text-white backdrop-blur-sm border border-slate-600 hover:border-primary rounded-lg text-xs font-bold uppercase tracking-wider transition-all duration-300">
+                                View
+                            </button>
+</div>
+</div>
+</div>
+<div class="shrink-0 w-44 group relative rounded-2xl overflow-hidden shadow-lg bg-surface-light dark:bg-surface-dark border border-slate-100 dark:border-slate-800">
+<div class="h-56 relative">
+<img alt="New York city" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDe9mo18bNnFV1w2wnsU5JGUenw5qVMA3sgC_PTaTvFDWljju7TfdpeDEGUq1hP_NkpOy8IbasgJ4mHIfq6XrGtOQrcNj14yuGpbK_dx2qKGNntg2RFHrw8649bL1htrF0ZirZuTbtecPPPuDfJF2hNUHls-FOon0D_1AGDwRjsG0teDisCLF1RfyabRDY2VWCYdEnq42NG6P80PJ5-NXReK4wXpaGL-n9haeYqvGlcFW3BEtXAKONBslOPT4QXQT7_KSb0leNBx4U"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
+<div class="absolute bottom-0 left-0 right-0 p-4">
+<div class="flex items-center gap-1 mb-1">
+<span class="material-icons-round text-xs text-green-400">check_circle</span>
+<span class="text-xs font-bold text-slate-300">COMPLETED</span>
+</div>
+<h4 class="font-display font-bold text-white text-lg leading-tight mb-3">NYC Trip</h4>
+<button class="w-full py-1.5 bg-slate-700/50 hover:bg-primary hover:text-black text-white backdrop-blur-sm border border-slate-600 hover:border-primary rounded-lg text-xs font-bold uppercase tracking-wider transition-all duration-300">
+                                View
+                            </button>
+</div>
+</div>
+</div>
+<div class="shrink-0 w-44 group relative rounded-2xl overflow-hidden shadow-lg bg-surface-light dark:bg-surface-dark border border-slate-100 dark:border-slate-800">
+<div class="h-56 relative">
+<img alt="New York city" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4CeNAYUAvxMsv1Rc8IL2mnwtDdE8wZPv9W8lcVC7O474nNOwls32K6kk_QWFNH9aOpgjxhNGlLlqGFdxZphhbrih-0-rOKZ6ZiBrqrdzKwKFZiFC7ljk5yXXgJxNdclc7bIuEw4XTuSP70VmetsZ7D5_neLWLis1HaBwqjLfSstk6zfod_4VDfS3Ml1M1QDFRrJpewxkCSX6o1Gv0XHJ1vj9Zdc5p-3rxwkMd1-QMUbX_RjrqyYSlNrnPTqT6FcVzoII45Q8xDT0"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
+<div class="absolute bottom-0 left-0 right-0 p-4">
+<div class="flex items-center gap-1 mb-1">
+<span class="material-icons-round text-xs text-green-400">check_circle</span>
+<span class="text-xs font-bold text-slate-300">COMPLETED</span>
+</div>
+<h4 class="font-display font-bold text-white text-lg leading-tight mb-3">NYC Trip</h4>
+<button class="w-full py-1.5 bg-slate-700/50 hover:bg-primary hover:text-black text-white backdrop-blur-sm border border-slate-600 hover:border-primary rounded-lg text-xs font-bold uppercase tracking-wider transition-all duration-300">
+                                View
+                            </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<div class="fixed bottom-0 left-0 right-0 bg-surface-light dark:bg-background-dark/95 backdrop-blur-lg border-t border-slate-200 dark:border-slate-800 pb-safe pt-2 px-6 flex justify-between items-center z-50">
+<button class="flex flex-col items-center gap-1 p-2 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition">
+<span class="material-icons-round text-2xl">search</span>
+<span class="text-[10px] font-medium">Explore</span>
+</button>
+<button class="flex flex-col items-center gap-1 p-2 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition">
+<span class="material-icons-round text-2xl">favorite_border</span>
+<span class="text-[10px] font-medium">Saved</span>
+</button>
+<div class="relative -top-5">
+<button class="w-14 h-14 bg-primary text-black rounded-full shadow-lg shadow-primary/30 flex items-center justify-center transform transition active:scale-95">
+<span class="material-icons-round text-3xl">add</span>
+</button>
+</div>
+<button class="flex flex-col items-center gap-1 p-2 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition">
+<span class="material-icons-round text-2xl">flight_takeoff</span>
+<span class="text-[10px] font-medium">Trips</span>
+</button>
+<button class="flex flex-col items-center gap-1 p-2 text-primary dark:text-primary transition">
+<span class="material-icons-round text-2xl">person</span>
+<span class="text-[10px] font-medium">Profile</span>
+</button>
+</div>
+
+</body></html>

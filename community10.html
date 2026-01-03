@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Community Tab - GlobalTrotter</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#191970", // Midnight Blue as requested
+              "background-light": "#F3F4F6", // Light gray
+              "background-dark": "#0B0F19", // Very dark blue/black
+              "card-light": "#FFFFFF",
+              "card-dark": "#151B2B",
+              "text-primary-light": "#111827",
+              "text-primary-dark": "#F9FAFB",
+              "text-muted-light": "#6B7280",
+              "text-muted-dark": "#9CA3AF",
+              "accent-blue": "#3B82F6",
+            },
+            fontFamily: {
+              display: ["Inter", "sans-serif"],
+              sans: ["Inter", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.5rem",
+              xl: "1rem",
+              '2xl': "1.5rem",
+            },
+            boxShadow: {
+              'soft': '0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03)',
+              'glow': '0 0 15px rgba(59, 130, 246, 0.15)',
+            }
+          },
+        },
+      };
+    </script>
+<style>.hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-sans transition-colors duration-200 min-h-screen flex justify-center">
+<div class="w-full max-w-md bg-background-light dark:bg-background-dark min-h-screen flex flex-col relative overflow-hidden shadow-2xl">
+<div class="h-10 w-full bg-transparent"></div>
+<header class="px-5 py-3 flex justify-between items-center z-10">
+<h1 class="text-xl font-bold text-primary dark:text-blue-100 tracking-tight flex items-center gap-2">
+<span class="material-icons text-primary dark:text-blue-400">public</span>
+                GlobalTrotter
+            </h1>
+<div class="h-10 w-10 rounded-full bg-gray-200 dark:bg-gray-800 border-2 border-primary dark:border-blue-500/30 overflow-hidden shadow-sm flex items-center justify-center relative cursor-pointer hover:opacity-90 transition-opacity">
+<img alt="User Avatar" class="h-full w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbltamcXE4806KYCBelGlsqTbMtVknR1Sd6SZiOSuz9DbCNEQUGlsU4wfSjlgpaXp2oY7_pVnDOmi_Q8JJeyDBPoU_brqeA9CQAqqr_VdL5avDvhq2c5BvQtK_UYS_DuWZRZo-sahNXP9eg8GUV2mnQva_PWJrNHupdp--fO4nuUSxMMjyhRA885wExdnRjNnvttfFcmWES2RYxnUoph1gtB-igGAxmRI0y-MG_dvdndVtfYDzFvJUm_HwKYeVu_mwmgDMlNSUn2cV"/>
+</div>
+</header>
+<div class="px-5 pb-2 pt-2 space-y-4">
+<div class="relative group">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+<span class="material-icons text-text-muted-light dark:text-text-muted-dark text-xl group-focus-within:text-primary dark:group-focus-within:text-blue-400 transition-colors">search</span>
+</div>
+<input class="block w-full pl-10 pr-3 py-3 rounded-xl border-none ring-1 ring-gray-200 dark:ring-gray-700 bg-white dark:bg-card-dark text-text-primary-light dark:text-text-primary-dark placeholder-text-muted-light dark:placeholder-text-muted-dark focus:ring-2 focus:ring-primary dark:focus:ring-blue-500 shadow-sm transition-all text-sm" placeholder="Search destinations, users..." type="text"/>
+</div>
+<div class="flex gap-2 overflow-x-auto hide-scrollbar pb-1">
+<button class="flex items-center gap-1.5 px-4 py-2 rounded-full bg-white dark:bg-card-dark border border-gray-200 dark:border-gray-700 text-text-primary-light dark:text-text-primary-dark text-xs font-medium whitespace-nowrap active:scale-95 transition-transform shadow-sm">
+<span class="material-icons text-sm text-text-muted-light dark:text-text-muted-dark">grid_view</span>
+                    Group by
+                </button>
+<button class="flex items-center gap-1.5 px-4 py-2 rounded-full bg-white dark:bg-card-dark border border-gray-200 dark:border-gray-700 text-text-primary-light dark:text-text-primary-dark text-xs font-medium whitespace-nowrap active:scale-95 transition-transform shadow-sm">
+<span class="material-icons text-sm text-text-muted-light dark:text-text-muted-dark">filter_list</span>
+                    Filter
+                </button>
+<button class="flex items-center gap-1.5 px-4 py-2 rounded-full bg-white dark:bg-card-dark border border-gray-200 dark:border-gray-700 text-text-primary-light dark:text-text-primary-dark text-xs font-medium whitespace-nowrap active:scale-95 transition-transform shadow-sm">
+<span class="material-icons text-sm text-text-muted-light dark:text-text-muted-dark">sort</span>
+                    Sort by
+                </button>
+</div>
+</div>
+<div class="px-5 pt-4 pb-2">
+<h2 class="text-lg font-semibold text-text-primary-light dark:text-text-primary-dark flex items-center gap-2">
+                Community Tab
+                <span class="px-2 py-0.5 rounded-full bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 text-[10px] font-bold uppercase tracking-wider">Live</span>
+</h2>
+</div>
+<div class="flex-1 overflow-y-auto px-5 pb-24 space-y-5 hide-scrollbar">
+<div class="flex gap-4 group">
+<div class="flex flex-col items-center pt-2">
+<div class="w-10 h-10 rounded-full border-2 border-primary dark:border-blue-500/50 flex items-center justify-center bg-white dark:bg-card-dark shadow-md z-10 shrink-0">
+<img alt="User" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4JfosNLRk0D0gNbJR_HKa0FgLK73HicIJItWtWgFES89pgK26pjPqLa46VaNGYLGkntfAfQ8G72Up6pnLOCiTbDCaijb5yDWk2b144hXsS-A6ROHqCLSKBW0UcznRavxeWBIW53W9IyMLtizu0NqCN3k6G8_t7Med3DPzczrjZr6A3ElLnPsVAL5eeEJJeRnY9Abfax7-TJN3i9DsaO3nc10bNIAtV5qOk0W_Kwt7PWKaMkQpY_CwqW9TLfB_EfMH1qDoWB0IuS6a"/>
+</div>
+<div class="w-0.5 flex-1 bg-gray-200 dark:bg-gray-800 my-1 group-last:hidden"></div>
+</div>
+<div class="flex-1 bg-white dark:bg-card-dark rounded-xl p-4 shadow-soft border border-gray-100 dark:border-gray-800 hover:border-primary/20 dark:hover:border-blue-500/30 transition-all cursor-pointer">
+<div class="flex justify-between items-start mb-2">
+<div>
+<h3 class="font-bold text-text-primary-light dark:text-text-primary-dark text-base">Kyoto Autumn Trip</h3>
+<p class="text-xs text-text-muted-light dark:text-text-muted-dark">by @sarah_travels • 2h ago</p>
+</div>
+<span class="text-xs font-medium px-2 py-1 rounded bg-green-50 dark:bg-green-900/20 text-green-600 dark:text-green-400 border border-green-100 dark:border-green-900/30">Budget</span>
+</div>
+<p class="text-sm text-gray-600 dark:text-gray-400 line-clamp-2 mb-3 leading-relaxed">
+                        Found an amazing hidden temple path near Arashiyama. Budget is holding up well despite the food costs! 🍜
+                    </p>
+<div class="flex items-center gap-4 pt-2 border-t border-gray-100 dark:border-gray-800">
+<div class="flex items-center text-xs text-text-muted-light dark:text-text-muted-dark">
+<span class="material-icons text-base mr-1">paid</span>
+                            $1,200 Left
+                        </div>
+<div class="flex items-center text-xs text-text-muted-light dark:text-text-muted-dark">
+<span class="material-icons text-base mr-1">location_on</span>
+                            Japan
+                        </div>
+<div class="ml-auto flex items-center text-xs text-primary dark:text-blue-400 font-medium">
+                            View Itinerary <span class="material-icons text-sm ml-0.5">chevron_right</span>
+</div>
+</div>
+</div>
+</div>
+<div class="flex gap-4 group">
+<div class="flex flex-col items-center pt-2">
+<div class="w-10 h-10 rounded-full border-2 border-gray-300 dark:border-gray-600 flex items-center justify-center bg-white dark:bg-card-dark shadow-md z-10 shrink-0">
+<span class="text-xs font-bold text-gray-500 dark:text-gray-400">MK</span>
+</div>
+<div class="w-0.5 flex-1 bg-gray-200 dark:bg-gray-800 my-1 group-last:hidden"></div>
+</div>
+<div class="flex-1 bg-white dark:bg-card-dark rounded-xl p-4 shadow-soft border border-gray-100 dark:border-gray-800 hover:border-primary/20 dark:hover:border-blue-500/30 transition-all cursor-pointer">
+<div class="flex justify-between items-start mb-2">
+<div>
+<h3 class="font-bold text-text-primary-light dark:text-text-primary-dark text-base">Backpacking Europe</h3>
+<p class="text-xs text-text-muted-light dark:text-text-muted-dark">by @mike_k • 5h ago</p>
+</div>
+<span class="text-xs font-medium px-2 py-1 rounded bg-orange-50 dark:bg-orange-900/20 text-orange-600 dark:text-orange-400 border border-orange-100 dark:border-orange-900/30">Planning</span>
+</div>
+<p class="text-sm text-gray-600 dark:text-gray-400 line-clamp-2 mb-3 leading-relaxed">
+                        Need advice on Eurail passes. Is the global pass worth it for 3 weeks? Visiting France, Germany, and Italy.
+                    </p>
+<div class="flex items-center gap-3 pt-2">
+<div class="flex -space-x-2">
+<img alt="Reply 1" class="w-6 h-6 rounded-full border-2 border-white dark:border-card-dark" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkNUr9ClA-7epaHmoCT3IIvZRYzDyCuL4NNw9Drkyc4OYHiOXMfbNqN5YCv1YcG912uoXC61ABsMnv2nP3BfP7BLyIYXckkIygjzNS0sjM1Z1FgAZL6UUHBqlXqzk9iJ3J1I84r54w6Z7AUhifuaJZmjlaOcflJ_63rBwwvgtq9zYM8pEx9H78Oi1hbXPS_BSe1COCWhacvNk3zb8IwlBU0ymO-DVD1aVPN8gHifWV3WNp811yw0ouJTOs2AbUbkN9bSgHS-zacgLX"/>
+<img alt="Reply 2" class="w-6 h-6 rounded-full border-2 border-white dark:border-card-dark" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQd8NpKstvTuxx9iXM1gFarkbxm5ZHAJe_0zhl_CcFjLViBFuQSg9xRtzFRQf4DwW6riHGhJONQJZpvkRlOu9GiI1sMjz_vxcLiY7hhOOGBErwgxWDMW15PkBw10K6D5iUviTlsiAq-k41N7aNz5dBWZ4vI4p7RtGngqXh-t-Z_cYUHhMWW5M5MwSDLoG7FLao7HJPHaASIhU6qhc8qtlSLs6OoTG9MlPk6z0AcWCofoGR-ZB0Q_bojWKqXHJ-2SAHqbCwDzQFyP_W"/>
+</div>
+<span class="text-xs text-text-muted-light dark:text-text-muted-dark">12 replies</span>
+</div>
+</div>
+</div>
+<div class="flex gap-4 group">
+<div class="flex flex-col items-center pt-2">
+<div class="w-10 h-10 rounded-full border-2 border-primary dark:border-blue-500/50 flex items-center justify-center bg-white dark:bg-card-dark shadow-md z-10 shrink-0">
+<img alt="User" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBl_nyOxnlV4Xrc_N8MfihRPRpVx0SjV9nEkZDV6vpYhVB35_cmPJXtNz519tpqzGk5-mIYs6vL96mEdI5hRPTQsd2nKCaam9vcYpm-gAjPHmWxMZrKX3Z5v5LSsJcmVCvFm6KAqyb51kmJQn3FZxSzU2I-NB3FO-vbr_Zi6yHt-LT19JR6T8nWHOYh3rGfeOEAPrSEY37fmrzEoYVHifUAjGkh3TPPS6saj3sHvsaYmCyd7dwMByzZCvcEkoHkE-iXYQSXSC-zan-Z"/>
+</div>
+<div class="w-0.5 flex-1 bg-gray-200 dark:bg-gray-800 my-1 group-last:hidden"></div>
+</div>
+<div class="flex-1 bg-white dark:bg-card-dark rounded-xl p-0 shadow-soft border border-gray-100 dark:border-gray-800 hover:border-primary/20 dark:hover:border-blue-500/30 transition-all overflow-hidden cursor-pointer">
+<div class="h-24 w-full bg-cover bg-center relative" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCZ9KnY3QlquLFvxTmx-2sn1E_DLdiC7WiB0k5pCXwYgYNFDbiXrLoTv-5wADyciqr2u-WMx66dkzY19M2t_te9buLpfxfHU-_ijjZAXID8S3QVycGJMzQQOXey4H9_QUOHcag8QYi_AEjzlg4xHMCSbhF_wvOopUy9nbVO67bjiEgEgtj9ztykus0Zi1v2WR7i-btSc_thN1Q0EOn45ISGI_7KnzqbsmDpYhzO1VW6-fjm5dZNGYIRmef7mK4RRTyaoaI5iKfgIaa2');">
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<div class="absolute bottom-2 left-3 text-white font-bold text-sm drop-shadow-md">Cinque Terre Hiking</div>
+</div>
+<div class="p-4">
+<div class="flex justify-between items-start mb-1">
+<p class="text-xs text-text-muted-light dark:text-text-muted-dark">by @alex_explorer • 8h ago</p>
+<div class="flex gap-1">
+<span class="material-icons text-xs text-yellow-400">star</span>
+<span class="material-icons text-xs text-yellow-400">star</span>
+<span class="material-icons text-xs text-yellow-400">star</span>
+<span class="material-icons text-xs text-yellow-400">star</span>
+<span class="material-icons text-xs text-yellow-400">star_half</span>
+</div>
+</div>
+<p class="text-sm text-gray-600 dark:text-gray-400 line-clamp-2 leading-relaxed">
+                            The views from the Blue Trail are absolutely breathtaking. Make sure to buy the trekking card online beforehand to skip lines!
+                        </p>
+</div>
+</div>
+</div>
+<div class="flex gap-4 group">
+<div class="flex flex-col items-center pt-2">
+<div class="w-10 h-10 rounded-full border-2 border-gray-300 dark:border-gray-600 flex items-center justify-center bg-white dark:bg-card-dark shadow-md z-10 shrink-0">
+<span class="material-icons text-gray-400 dark:text-gray-500 text-lg">flight_takeoff</span>
+</div>
+<div class="w-0.5 flex-1 bg-gray-200 dark:bg-gray-800 my-1 group-last:hidden"></div>
+</div>
+<div class="flex-1 bg-white dark:bg-card-dark rounded-xl p-4 shadow-soft border border-gray-100 dark:border-gray-800 hover:border-primary/20 dark:hover:border-blue-500/30 transition-all cursor-pointer">
+<div class="flex justify-between items-center mb-2">
+<h3 class="font-bold text-text-primary-light dark:text-text-primary-dark text-base">New Feature Alert</h3>
+<span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-primary text-white">SYSTEM</span>
+</div>
+<p class="text-sm text-gray-600 dark:text-gray-400 mb-2 leading-relaxed">
+                        Group expense tracking is now live! Split bills easily with your travel buddies.
+                    </p>
+<button class="text-xs bg-gray-100 dark:bg-gray-800 text-text-primary-light dark:text-text-primary-dark px-3 py-1.5 rounded-lg font-medium hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+                        Learn More
+                    </button>
+</div>
+</div>
+</div>
+<button class="absolute bottom-6 right-6 w-14 h-14 bg-primary text-white rounded-full shadow-lg shadow-blue-900/40 flex items-center justify-center hover:scale-105 active:scale-95 transition-all z-20">
+<span class="material-icons text-2xl">add</span>
+</button>
+</div>
+
+</body></html>

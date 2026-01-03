@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Trip Budget &amp; Itinerary</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#1e3a8a", // Midnight Blue
+                        accent: "#06b6d4", // Aqua
+                        warning: "#f97316", // Orange
+                        "background-light": "#f3f4f6", // Cool gray for light mode
+                        "background-dark": "#0f172a", // Very dark slate for dark mode
+                        "card-light": "#ffffff",
+                        "card-dark": "#1e293b",
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.75rem",
+                    },
+                },
+            },
+        };
+    </script>
+<style>::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 3px;
+        }
+        .dark ::-webkit-scrollbar-thumb {
+            background: #475569;
+        }.timeline-line {
+            position: absolute;
+            left: 50%;
+            top: 100%;
+            bottom: -24px;
+            width: 2px;
+            transform: translateX(-50%);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-800 dark:text-slate-100 font-sans min-h-screen antialiased transition-colors duration-200">
+<div class="max-w-md mx-auto min-h-screen flex flex-col relative overflow-hidden bg-white dark:bg-slate-900 shadow-2xl">
+<header class="sticky top-0 z-20 bg-primary text-white shadow-md">
+<div class="px-5 py-4 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-icons text-accent">flight_takeoff</span>
+<h1 class="text-xl font-bold tracking-tight">GlobalTrotter</h1>
+</div>
+<button class="w-10 h-10 rounded-full bg-blue-800 border-2 border-accent flex items-center justify-center hover:bg-blue-700 transition">
+<img alt="User Profile" class="w-full h-full rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPr1DiNeTrUfCoXz8qEwhPLpe_XFDfBsSwS60CDzywa9ezK7vn2pLi5-Nw6EA_XqfpXVkYsV085IVtp10LGIwHqc5i5wf7HNVgndXJ5V6W53RP9hz0d1aXlxgYkELisHr54iQAXGMG40TVJFHWbN4K1SQZg5MIsQoI6YGKNY-aO_dOkGAKWDIn5bHZu5ehBXLVRB2rorMk39yqCT4eaEVfaLwtkBkIKSnmiC9khHPr5BzzxxZosiLjlJ8qVDL-0z1OpOvtAOiFvZgz"/>
+</button>
+</div>
+<div class="px-5 pb-4 space-y-3">
+<div class="relative">
+<span class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+<span class="material-icons text-blue-300 text-sm">search</span>
+</span>
+<input class="w-full pl-9 pr-4 py-2 bg-blue-900/50 border border-blue-700 rounded-lg text-sm text-white placeholder-blue-300 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition" placeholder="Search itinerary..." type="text"/>
+</div>
+<div class="flex gap-2 overflow-x-auto pb-1 no-scrollbar">
+<button class="flex items-center gap-1 px-3 py-1.5 bg-blue-800 hover:bg-blue-700 rounded-full text-xs font-medium text-blue-100 border border-blue-700 whitespace-nowrap transition">
+<span class="material-icons text-sm">category</span> Group by
+                    </button>
+<button class="flex items-center gap-1 px-3 py-1.5 bg-blue-800 hover:bg-blue-700 rounded-full text-xs font-medium text-blue-100 border border-blue-700 whitespace-nowrap transition">
+<span class="material-icons text-sm">filter_list</span> Filter
+                    </button>
+<button class="flex items-center gap-1 px-3 py-1.5 bg-blue-800 hover:bg-blue-700 rounded-full text-xs font-medium text-blue-100 border border-blue-700 whitespace-nowrap transition">
+<span class="material-icons text-sm">sort</span> Sort by
+                    </button>
+</div>
+</div>
+</header>
+<main class="flex-1 px-5 py-6 space-y-8">
+<div class="text-center mb-6">
+<h2 class="text-2xl font-bold text-slate-900 dark:text-white">Tokyo Adventure</h2>
+<div class="mt-2 inline-flex items-center gap-4 text-sm font-medium">
+<div class="flex items-center gap-1 text-accent">
+<span class="material-icons text-sm">directions_walk</span>
+<span>Activity</span>
+</div>
+<div class="w-1 h-1 bg-slate-400 rounded-full"></div>
+<div class="flex items-center gap-1 text-warning">
+<span class="material-icons text-sm">attach_money</span>
+<span>Expenses</span>
+</div>
+</div>
+</div>
+<section class="relative">
+<div class="sticky top-40 z-10 mb-6">
+<span class="bg-card-light dark:bg-card-dark px-4 py-1.5 rounded-full border border-slate-200 dark:border-slate-700 shadow-sm text-sm font-bold text-primary dark:text-accent inline-block">
+                        Day 1 - Nov 12
+                    </span>
+</div>
+<div class="space-y-6 relative">
+<div class="grid grid-cols-[1fr_auto] gap-4 relative group">
+<div class="bg-card-light dark:bg-card-dark p-4 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm relative z-10">
+<h3 class="font-semibold text-slate-800 dark:text-slate-100">Tsukiji Outer Market</h3>
+<p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Breakfast &amp; Walking Tour</p>
+<div class="flex items-center gap-2 mt-2">
+<span class="bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 text-[10px] px-2 py-0.5 rounded font-medium">Food</span>
+<span class="text-[10px] text-slate-400">08:00 AM</span>
+</div>
+</div>
+<div class="w-24 bg-card-light dark:bg-card-dark p-3 flex flex-col items-center justify-center rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm z-10">
+<span class="text-sm font-bold text-slate-700 dark:text-slate-200">¥3,500</span>
+<span class="text-[10px] text-slate-400 mt-1">Cash</span>
+</div>
+<div class="absolute left-[40%] top-full h-8 w-px bg-slate-300 dark:bg-slate-700 flex items-end justify-center">
+<span class="material-icons text-slate-300 dark:text-slate-700 text-sm -mb-1.5">arrow_drop_down</span>
+</div>
+</div>
+<div class="grid grid-cols-[1fr_auto] gap-4 relative group pt-2">
+<div class="bg-card-light dark:bg-card-dark p-4 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm relative z-10">
+<h3 class="font-semibold text-slate-800 dark:text-slate-100">TeamLab Planets</h3>
+<p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Digital Art Museum Entry</p>
+<div class="flex items-center gap-2 mt-2">
+<span class="bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 text-[10px] px-2 py-0.5 rounded font-medium">Ticket</span>
+<span class="text-[10px] text-slate-400">11:00 AM</span>
+</div>
+</div>
+<div class="w-24 bg-card-light dark:bg-card-dark p-3 flex flex-col items-center justify-center rounded-xl border-l-4 border-warning shadow-sm z-10">
+<span class="text-sm font-bold text-warning">¥3,800</span>
+<span class="text-[10px] text-warning/80 mt-1">High Cost</span>
+</div>
+<div class="absolute left-[40%] top-full h-8 w-px bg-slate-300 dark:bg-slate-700 flex items-end justify-center">
+<span class="material-icons text-slate-300 dark:text-slate-700 text-sm -mb-1.5">arrow_drop_down</span>
+</div>
+</div>
+<div class="grid grid-cols-[1fr_auto] gap-4 relative group pt-2">
+<div class="bg-card-light dark:bg-card-dark p-4 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm relative z-10">
+<h3 class="font-semibold text-slate-800 dark:text-slate-100">Shibuya Crossing</h3>
+<p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Sightseeing &amp; Coffee</p>
+<div class="flex items-center gap-2 mt-2">
+<span class="bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-300 text-[10px] px-2 py-0.5 rounded font-medium">Leisure</span>
+<span class="text-[10px] text-slate-400">03:00 PM</span>
+</div>
+</div>
+<div class="w-24 bg-card-light dark:bg-card-dark p-3 flex flex-col items-center justify-center rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm z-10">
+<span class="text-sm font-bold text-slate-700 dark:text-slate-200">¥800</span>
+<span class="text-[10px] text-slate-400 mt-1">Card</span>
+</div>
+</div>
+</div>
+</section>
+<section class="relative mt-8">
+<div class="sticky top-40 z-10 mb-6">
+<span class="bg-card-light dark:bg-card-dark px-4 py-1.5 rounded-full border border-slate-200 dark:border-slate-700 shadow-sm text-sm font-bold text-primary dark:text-accent inline-block">
+                        Day 2 - Nov 13
+                    </span>
+</div>
+<div class="space-y-6 relative">
+<div class="grid grid-cols-[1fr_auto] gap-4 relative group">
+<div class="bg-card-light dark:bg-card-dark p-4 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm relative z-10">
+<h3 class="font-semibold text-slate-800 dark:text-slate-100">Senso-ji Temple</h3>
+<p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Cultural Visit &amp; Souvenirs</p>
+<div class="flex items-center gap-2 mt-2">
+<span class="bg-orange-100 dark:bg-orange-900/40 text-orange-700 dark:text-orange-300 text-[10px] px-2 py-0.5 rounded font-medium">Culture</span>
+<span class="text-[10px] text-slate-400">09:30 AM</span>
+</div>
+</div>
+<div class="w-24 bg-card-light dark:bg-card-dark p-3 flex flex-col items-center justify-center rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm z-10">
+<span class="text-sm font-bold text-slate-700 dark:text-slate-200">Free</span>
+<span class="text-[10px] text-slate-400 mt-1">-</span>
+</div>
+<div class="absolute left-[40%] top-full h-8 w-px bg-slate-300 dark:bg-slate-700 flex items-end justify-center">
+<span class="material-icons text-slate-300 dark:text-slate-700 text-sm -mb-1.5">arrow_drop_down</span>
+</div>
+</div>
+<div class="grid grid-cols-[1fr_auto] gap-4 relative group pt-2">
+<div class="bg-card-light dark:bg-card-dark p-4 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm relative z-10">
+<h3 class="font-semibold text-slate-800 dark:text-slate-100">Nakamise Shopping Street</h3>
+<p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Lunch &amp; Snacks</p>
+<div class="flex items-center gap-2 mt-2">
+<span class="bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 text-[10px] px-2 py-0.5 rounded font-medium">Food</span>
+<span class="text-[10px] text-slate-400">11:30 AM</span>
+</div>
+</div>
+<div class="w-24 bg-card-light dark:bg-card-dark p-3 flex flex-col items-center justify-center rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm z-10">
+<span class="text-sm font-bold text-slate-700 dark:text-slate-200">¥2,200</span>
+<span class="text-[10px] text-slate-400 mt-1">Cash</span>
+</div>
+<div class="absolute left-[40%] top-full h-8 w-px bg-slate-300 dark:bg-slate-700 flex items-end justify-center">
+<span class="material-icons text-slate-300 dark:text-slate-700 text-sm -mb-1.5">arrow_drop_down</span>
+</div>
+</div>
+<div class="grid grid-cols-[1fr_auto] gap-4 relative group pt-2">
+<div class="bg-card-light dark:bg-card-dark p-4 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm relative z-10">
+<h3 class="font-semibold text-slate-800 dark:text-slate-100">Tokyo Skytree</h3>
+<p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Observation Deck</p>
+<div class="flex items-center gap-2 mt-2">
+<span class="bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 text-[10px] px-2 py-0.5 rounded font-medium">Ticket</span>
+<span class="text-[10px] text-slate-400">02:30 PM</span>
+</div>
+</div>
+<div class="w-24 bg-card-light dark:bg-card-dark p-3 flex flex-col items-center justify-center rounded-xl border-l-4 border-warning shadow-sm z-10">
+<span class="text-sm font-bold text-warning">¥3,100</span>
+<span class="text-[10px] text-warning/80 mt-1">Alert</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<div class="sticky bottom-0 bg-card-light dark:bg-card-dark border-t border-slate-200 dark:border-slate-800 p-4 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1)] z-30">
+<div class="flex justify-between items-center mb-2">
+<span class="text-xs text-slate-500 dark:text-slate-400 font-medium uppercase tracking-wide">Estimated Total</span>
+<span class="text-lg font-bold text-primary dark:text-white">¥13,400</span>
+</div>
+<div class="w-full h-2 bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden">
+<div class="h-full bg-accent w-[75%] rounded-full relative">
+<div class="absolute right-0 top-0 h-full w-2 bg-white/30 animate-pulse"></div>
+</div>
+</div>
+<div class="flex justify-between mt-1">
+<span class="text-[10px] text-accent font-medium">75% of budget used</span>
+<span class="text-[10px] text-slate-400">¥18,000 Budget</span>
+</div>
+</div>
+</div>
+
+</body></html>
