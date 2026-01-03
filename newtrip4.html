@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>My Trips - GlobalTrotter</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#5BC0BE", // Aqua
+                        "background-light": "#F3F4F6", // Light Gray
+                        "background-dark": "#0B132B", // Midnight Blue
+                        "surface-dark": "#1C2541", // Slightly lighter midnight blue for cards
+                        "surface-light": "#FFFFFF",
+                        "text-primary": "#E5E7EB", // Light gray text for dark mode
+                        "text-secondary": "#9CA3AF",
+                    },
+                    fontFamily: {
+                        display: ["Inter", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "12px",
+                        'lg': '16px',
+                        'xl': '24px',
+                    },
+                },
+            },
+        };
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display antialiased transition-colors duration-200">
+<div class="max-w-md mx-auto min-h-screen relative flex flex-col pb-20 overflow-hidden">
+<header class="px-6 pt-12 pb-4 flex justify-between items-center bg-surface-light dark:bg-background-dark z-10 sticky top-0 border-b border-gray-200 dark:border-gray-800">
+<div>
+<h1 class="text-xl font-bold text-gray-900 dark:text-text-primary">GlobalTrotter</h1>
+<p class="text-xs text-gray-500 dark:text-gray-400">Plan your next adventure</p>
+</div>
+<button class="p-2 rounded-full bg-gray-100 dark:bg-surface-dark text-gray-600 dark:text-primary hover:bg-gray-200 dark:hover:bg-opacity-80 transition">
+<span class="material-icons text-2xl">account_circle</span>
+</button>
+</header>
+<main class="flex-1 px-6 py-6 space-y-8">
+<section class="bg-surface-light dark:bg-surface-dark rounded-xl p-5 shadow-sm border border-gray-100 dark:border-gray-700">
+<div class="flex items-center justify-between mb-4">
+<h2 class="text-lg font-semibold text-gray-800 dark:text-white">Plan a new trip</h2>
+<span class="material-icons text-primary text-xl">flight_takeoff</span>
+</div>
+<form class="space-y-4">
+<div>
+<label class="block text-xs font-medium text-gray-500 dark:text-gray-400 mb-1 ml-1">Trip Name</label>
+<input class="w-full bg-gray-50 dark:bg-background-dark border border-gray-200 dark:border-gray-600 rounded-lg px-4 py-3 text-sm text-gray-900 dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all placeholder-gray-400 dark:placeholder-gray-600" placeholder="e.g. Summer in Tokyo" type="text"/>
+</div>
+<div>
+<label class="block text-xs font-medium text-gray-500 dark:text-gray-400 mb-1 ml-1">Destination</label>
+<div class="relative">
+<span class="material-icons absolute left-3 top-3 text-gray-400 text-lg">location_on</span>
+<input class="w-full bg-gray-50 dark:bg-background-dark border border-gray-200 dark:border-gray-600 rounded-lg pl-10 pr-4 py-3 text-sm text-gray-900 dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all placeholder-gray-400 dark:placeholder-gray-600" placeholder="Select a Place" type="text"/>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div>
+<label class="block text-xs font-medium text-gray-500 dark:text-gray-400 mb-1 ml-1">Start Date</label>
+<div class="relative">
+<input class="w-full bg-gray-50 dark:bg-background-dark border border-gray-200 dark:border-gray-600 rounded-lg px-4 py-3 text-sm text-gray-900 dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all appearance-none text-left" type="date"/>
+</div>
+</div>
+<div>
+<label class="block text-xs font-medium text-gray-500 dark:text-gray-400 mb-1 ml-1">End Date</label>
+<div class="relative">
+<input class="w-full bg-gray-50 dark:bg-background-dark border border-gray-200 dark:border-gray-600 rounded-lg px-4 py-3 text-sm text-gray-900 dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all appearance-none text-left" type="date"/>
+</div>
+</div>
+</div>
+<button class="w-full bg-primary hover:bg-opacity-90 text-white font-medium py-3 rounded-lg shadow-lg shadow-primary/30 transition-all mt-2 flex justify-center items-center gap-2" type="button">
+<span>Create Trip</span>
+<span class="material-icons text-sm">arrow_forward</span>
+</button>
+</form>
+</section>
+<section>
+<div class="flex items-center justify-between mb-4">
+<h3 class="text-lg font-semibold text-gray-800 dark:text-white leading-tight">
+                        Suggestions for Places<br/>to Visit / Activities
+                    </h3>
+<a class="text-xs font-medium text-primary hover:underline" href="#">See All</a>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="group relative bg-surface-light dark:bg-surface-dark rounded-xl overflow-hidden shadow-sm border border-gray-100 dark:border-gray-700 aspect-[4/5] cursor-pointer hover:shadow-md transition-all">
+<img alt="Mountain landscape with lake" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZg_x9rTp76tYMpB_njlbTg1VqEsQc4ESsc_QvHi7qIqV5PXoAgGZAhZRy8D6XqgvS4Zj3_VQrUqvhyNRw6BKctZS5quDWSKn2xb-WMHMURIZMLV7EWOkHb25iEgPah1td098vYyUofs2g-bbm-BMOYUqSj6A5-gHRt0iOPOwRa8H4wgdpVI2lyUBu9gA0FBzSV4xRKkdkpKMuwCaEDFOdMBaZJriwDZovyhPQBqQkW8TozjtFt_3nSVLgwdVkly81_jMTcbmxnrC0"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-3 w-full">
+<h4 class="text-white font-semibold text-sm truncate">Alpine Hiking</h4>
+<p class="text-gray-300 text-xs flex items-center mt-1">
+<span class="material-icons text-[10px] mr-1">place</span> Switzerland
+                            </p>
+</div>
+<button class="absolute top-2 right-2 w-7 h-7 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-primary hover:text-white transition">
+<span class="material-icons text-sm">bookmark_border</span>
+</button>
+</div>
+<div class="group relative bg-surface-light dark:bg-surface-dark rounded-xl overflow-hidden shadow-sm border border-gray-100 dark:border-gray-700 aspect-[4/5] cursor-pointer hover:shadow-md transition-all">
+<img alt="Paris street view" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDuyF3wPICKXH8LZ8oqbaiuM7uEJwhm1QrcTmYMuN7X4sSRnl5dDgtjtlNS2nEGdS3y8prMjszhjeY-yVw_oX44AZEtIxe0TG-Yf6m7HukWNh68dHo-tfkebswChJwxaaU5lZJF2fnjkdlIsofvrMY2T9nIzKb7wnqOLBqvW0KW2DLkuNU_StZmcmM9x1qcdPfuYCKKEH4rzJukO6SbyIV3Y2nMdkuSOXxICKJlKgS_Y9hP4T-PuJpAqL5rkykAohxEj55EB92H4Nxj"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-3 w-full">
+<h4 class="text-white font-semibold text-sm truncate">Paris City Tour</h4>
+<p class="text-gray-300 text-xs flex items-center mt-1">
+<span class="material-icons text-[10px] mr-1">place</span> France
+                            </p>
+</div>
+<button class="absolute top-2 right-2 w-7 h-7 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-primary hover:text-white transition">
+<span class="material-icons text-sm">bookmark_border</span>
+</button>
+</div>
+<div class="group relative bg-surface-light dark:bg-surface-dark rounded-xl overflow-hidden shadow-sm border border-gray-100 dark:border-gray-700 aspect-[4/5] cursor-pointer hover:shadow-md transition-all">
+<img alt="Tropical beach at sunset" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAs4xfdTbE8Ys5Qn9RGiyedvH6R3YNGLVuIqgdyyaLG7619Vf4HqBFgUjWM_Xa9s7uY7EQ_6DAXMxp8LeQiSxvfGJTPF8FoLKbe5u5pNPhGVJ5CdAIrOfkiUnj3c6V5vt5_z7RBVuL1tJoCZ4qfFfo-UFCbU8BeI75iXH_Maz0-jugTXOlPdFFjS3upoSOdvxYsP53n7Ux2ALxC1e4pFnYkbRJvRT5qUVOZ8Z2r2XA23jJ3Z_6DMw8qg4HhNdVxni6DFFu5q8k4QxEh"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-3 w-full">
+<h4 class="text-white font-semibold text-sm truncate">Beach Relax</h4>
+<p class="text-gray-300 text-xs flex items-center mt-1">
+<span class="material-icons text-[10px] mr-1">place</span> Bali
+                            </p>
+</div>
+<button class="absolute top-2 right-2 w-7 h-7 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-primary hover:text-white transition">
+<span class="material-icons text-sm">bookmark_border</span>
+</button>
+</div>
+<div class="group relative bg-surface-light dark:bg-surface-dark rounded-xl overflow-hidden shadow-sm border border-gray-100 dark:border-gray-700 aspect-[4/5] cursor-pointer hover:shadow-md transition-all">
+<img alt="Modern art museum interior" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDrZ-w7a8ynzus60RbZ9jP-OuL0_HQgcWKIewWMWUiwQAFFXY64JaUreBQgfI0foNOSXc3GktDDHtbjyRrG0aUn1objBvBBogECU50glEGuC0vw6YAJPsQYZ_KWXiuAtZpgXALjoC5Yoki7oy1WXdYa49NGkjDiEI3WIAGx4SLBKL57irwr2x8kHJXvtidA6Zv4QO21qMZWFgoaWZDmX1iqjQi7QLwlp0l9tuKDEWiaWMcMeJp8Jw1oAM7bdN7u_ahDUS7deT_s4HYr"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-3 w-full">
+<h4 class="text-white font-semibold text-sm truncate">Art Museums</h4>
+<p class="text-gray-300 text-xs flex items-center mt-1">
+<span class="material-icons text-[10px] mr-1">place</span> New York
+                            </p>
+</div>
+<button class="absolute top-2 right-2 w-7 h-7 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-primary hover:text-white transition">
+<span class="material-icons text-sm">bookmark_border</span>
+</button>
+</div>
+<div class="group relative bg-surface-light dark:bg-surface-dark rounded-xl overflow-hidden shadow-sm border border-gray-100 dark:border-gray-700 aspect-[4/5] cursor-pointer hover:shadow-md transition-all">
+<img alt="Dubai skyline at night" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8GPX4AjDB4NKgDvIIFIefGJnpKoGOY_aUfaRFNLX4OAonPvz_mzIY8RtZAw6GLK3nQ-Y4peurXdCGvvILW29gOrcMpAMY-Rews-c6RlwTRudUEht8fXPBeKFCCHObupYzJryW8oX4ZVZ6yatN1_d96eDnCJ-IoeVXQRpvzrdH9Byt_fR6R402eP9NLUWZNPcOxj-Uo3wb6eV3Yv9tVyACC0OBzXmbyFulguqUfxGHfyrexoVWNq9o93VJGEHrfuNRfGYpfjj1c04f"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-3 w-full">
+<h4 class="text-white font-semibold text-sm truncate">Desert Safari</h4>
+<p class="text-gray-300 text-xs flex items-center mt-1">
+<span class="material-icons text-[10px] mr-1">place</span> Dubai
+                            </p>
+</div>
+<button class="absolute top-2 right-2 w-7 h-7 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-primary hover:text-white transition">
+<span class="material-icons text-sm">bookmark_border</span>
+</button>
+</div>
+<div class="group relative bg-surface-light dark:bg-surface-dark rounded-xl overflow-hidden shadow-sm border border-gray-100 dark:border-gray-700 aspect-[4/5] cursor-pointer hover:shadow-md transition-all">
+<img alt="Kyoto temple in autumn" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHGPzqZXi9-wogQ8WB21KBuaxSJJc6g9nQ76DtpopQjz_SbnGGY07Vt0K0YEP44SZd8CRbQiDVQEs3rN-k-sSslMuK1g0JLobgShqCHOu2J9dbUCaRBmRusYKiG1vgi8m-v5YZ-LtIbDSo-dfCdQhFx3V3bmDCTjdECIrhLWHwmMYXvsHPCVuLdWlR_e8jDCg9x3PEYW_44DOFOBNV3N77exVuNgpQ7bmIL1oNCr9Icp4v4QGAh-n-t4h3OMD7AYgBjuNoEHHais20"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-3 w-full">
+<h4 class="text-white font-semibold text-sm truncate">Kyoto Temples</h4>
+<p class="text-gray-300 text-xs flex items-center mt-1">
+<span class="material-icons text-[10px] mr-1">place</span> Japan
+                            </p>
+</div>
+<button class="absolute top-2 right-2 w-7 h-7 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-primary hover:text-white transition">
+<span class="material-icons text-sm">bookmark_border</span>
+</button>
+</div>
+</div>
+</section>
+</main>
+<nav class="fixed bottom-0 w-full max-w-md bg-surface-light dark:bg-surface-dark border-t border-gray-200 dark:border-gray-800 pb-safe z-50">
+<div class="flex justify-around items-center h-16 px-2">
+<button class="flex flex-col items-center justify-center w-full h-full text-primary space-y-1">
+<span class="material-icons">home</span>
+<span class="text-[10px] font-medium">Home</span>
+</button>
+<button class="flex flex-col items-center justify-center w-full h-full text-gray-400 dark:text-gray-500 hover:text-primary dark:hover:text-primary transition space-y-1">
+<span class="material-icons">explore</span>
+<span class="text-[10px] font-medium">Explore</span>
+</button>
+<div class="relative -top-5">
+<button class="w-14 h-14 rounded-full bg-primary text-white shadow-lg shadow-primary/40 flex items-center justify-center hover:scale-105 transition-transform">
+<span class="material-icons text-2xl">add</span>
+</button>
+</div>
+<button class="flex flex-col items-center justify-center w-full h-full text-gray-400 dark:text-gray-500 hover:text-primary dark:hover:text-primary transition space-y-1">
+<span class="material-icons">bookmark</span>
+<span class="text-[10px] font-medium">Saved</span>
+</button>
+<button class="flex flex-col items-center justify-center w-full h-full text-gray-400 dark:text-gray-500 hover:text-primary dark:hover:text-primary transition space-y-1">
+<span class="material-icons">settings</span>
+<span class="text-[10px] font-medium">Settings</span>
+</button>
+</div>
+</nav>
+</div>
+<script>
+        // Simple dark mode toggle for demonstration purposes if opened in a browser without system pref
+        // In a real app, this would react to system settings or a toggle.
+        // Uncomment to force dark mode for testing:
+        document.documentElement.classList.add('dark');
+    </script>
+
+</body></html>

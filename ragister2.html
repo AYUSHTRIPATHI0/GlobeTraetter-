@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>User Registration Screen</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#5BC0BE", // Aqua for interactive elements
+                        secondary: "#1C2541", // Slightly lighter midnight blue for cards/inputs in dark mode
+                        "background-light": "#F3F4F6", // Light gray for light mode background
+                        "background-dark": "#0B132B", // Midnight Blue for dark mode background
+                        "text-light": "#1F2937", // Dark gray text for light mode
+                        "text-dark": "#E5E7EB", // Light gray text for dark mode
+                        "input-bg-light": "#FFFFFF",
+                        "input-bg-dark": "#1C2541",
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Inter', 'sans-serif'],
+                    },
+                    borderRadius: {
+                        DEFAULT: "12px",
+                        'xl': "16px",
+                        '2xl': "24px",
+                    },
+                },
+            },
+        };
+    </script>
+<style>::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #374151; 
+            border-radius: 3px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #4B5563; 
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark min-h-screen flex items-center justify-center font-sans antialiased transition-colors duration-300">
+<div class="w-full max-w-md h-full min-h-screen sm:min-h-0 sm:h-auto sm:rounded-2xl bg-background-light dark:bg-background-dark sm:shadow-2xl overflow-hidden relative flex flex-col">
+
+<div class="flex flex-col items-center pt-6 pb-8 px-6">
+<div class="relative group cursor-pointer mb-6">
+<div class="w-28 h-28 rounded-full bg-gray-200 dark:bg-secondary border-4 border-white dark:border-[#3A506B] flex items-center justify-center overflow-hidden shadow-lg transition-transform transform group-hover:scale-105">
+<span class="material-icons-outlined text-4xl text-gray-400 dark:text-gray-500">add_a_photo</span>
+</div>
+<div class="absolute bottom-1 right-1 bg-primary text-white p-2 rounded-full shadow-md flex items-center justify-center w-8 h-8">
+<span class="material-icons-outlined text-sm">edit</span>
+</div>
+</div>
+<h1 class="text-2xl font-bold text-text-light dark:text-text-dark">Create Account</h1>
+<p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Join us to plan your next adventure</p>
+</div>
+<div class="flex-1 px-6 pb-8 overflow-y-auto">
+<form class="space-y-5">
+<div class="grid grid-cols-2 gap-4">
+<div class="space-y-1">
+<label class="text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider ml-1" for="firstName">First Name</label>
+<div class="relative">
+<span class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-gray-400">
+<span class="material-icons-outlined text-lg">person</span>
+</span>
+<input class="w-full pl-10 pr-4 py-3 bg-input-bg-light dark:bg-input-bg-dark border border-gray-200 dark:border-gray-700 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent text-text-light dark:text-text-dark placeholder-gray-400 dark:placeholder-gray-500 outline-none transition-all shadow-sm" id="firstName" placeholder="John" type="text"/>
+</div>
+</div>
+<div class="space-y-1">
+<label class="text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider ml-1" for="lastName">Last Name</label>
+<div class="relative">
+<span class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-gray-400">
+<span class="material-icons-outlined text-lg">person_outline</span>
+</span>
+<input class="w-full pl-10 pr-4 py-3 bg-input-bg-light dark:bg-input-bg-dark border border-gray-200 dark:border-gray-700 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent text-text-light dark:text-text-dark placeholder-gray-400 dark:placeholder-gray-500 outline-none transition-all shadow-sm" id="lastName" placeholder="Doe" type="text"/>
+</div>
+</div>
+</div>
+<div class="space-y-1">
+<label class="text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider ml-1" for="email">Email Address</label>
+<div class="relative">
+<span class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-gray-400">
+<span class="material-icons-outlined text-lg">email</span>
+</span>
+<input class="w-full pl-10 pr-4 py-3 bg-input-bg-light dark:bg-input-bg-dark border border-gray-200 dark:border-gray-700 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent text-text-light dark:text-text-dark placeholder-gray-400 dark:placeholder-gray-500 outline-none transition-all shadow-sm" id="email" placeholder="john.doe@example.com" type="email"/>
+</div>
+</div>
+<div class="space-y-1">
+<label class="text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider ml-1" for="phone">Phone Number</label>
+<div class="relative">
+<span class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-gray-400">
+<span class="material-icons-outlined text-lg">phone</span>
+</span>
+<input class="w-full pl-10 pr-4 py-3 bg-input-bg-light dark:bg-input-bg-dark border border-gray-200 dark:border-gray-700 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent text-text-light dark:text-text-dark placeholder-gray-400 dark:placeholder-gray-500 outline-none transition-all shadow-sm" id="phone" placeholder="+1 (555) 000-0000" type="tel"/>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="space-y-1">
+<label class="text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider ml-1" for="city">City</label>
+<div class="relative">
+<span class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-gray-400">
+<span class="material-icons-outlined text-lg">location_city</span>
+</span>
+<input class="w-full pl-10 pr-4 py-3 bg-input-bg-light dark:bg-input-bg-dark border border-gray-200 dark:border-gray-700 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent text-text-light dark:text-text-dark placeholder-gray-400 dark:placeholder-gray-500 outline-none transition-all shadow-sm" id="city" placeholder="New York" type="text"/>
+</div>
+</div>
+<div class="space-y-1">
+<label class="text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider ml-1" for="country">Country</label>
+<div class="relative">
+<span class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-gray-400">
+<span class="material-icons-outlined text-lg">public</span>
+</span>
+<select class="w-full pl-10 pr-4 py-3 bg-input-bg-light dark:bg-input-bg-dark border border-gray-200 dark:border-gray-700 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent text-text-light dark:text-text-dark placeholder-gray-400 dark:placeholder-gray-500 outline-none transition-all shadow-sm appearance-none" id="country">
+<option>United States</option>
+<option>Canada</option>
+<option>United Kingdom</option>
+<option>Germany</option>
+<option>Japan</option>
+</select>
+<span class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none text-gray-400">
+<span class="material-icons-outlined text-lg">expand_more</span>
+</span>
+</div>
+</div>
+</div>
+<div class="space-y-1">
+<label class="text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider ml-1" for="additionalInfo">Additional Information</label>
+<div class="relative">
+<textarea class="w-full px-4 py-3 bg-input-bg-light dark:bg-input-bg-dark border border-gray-200 dark:border-gray-700 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent text-text-light dark:text-text-dark placeholder-gray-400 dark:placeholder-gray-500 outline-none transition-all shadow-sm resize-none" id="additionalInfo" placeholder="Tell us about your travel preferences..." rows="4"></textarea>
+</div>
+</div>
+<div class="pt-4 pb-4">
+<button class="w-full bg-primary hover:bg-[#4EABAA] text-white dark:text-[#0B132B] font-bold py-4 px-6 rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200 flex items-center justify-center space-x-2" type="button">
+<span>Register User</span>
+<span class="material-icons-outlined text-sm">arrow_forward</span>
+</button>
+<p class="text-center text-xs text-gray-400 dark:text-gray-500 mt-4">
+                        By registering, you agree to our <a class="text-primary hover:underline" href="#">Terms of Service</a>.
+                    </p>
+</div>
+</form>
+</div>
+</div>
+<div class="fixed bottom-4 right-4 z-50">
+<button class="bg-gray-800 text-white dark:bg-white dark:text-gray-800 p-3 rounded-full shadow-lg" onclick="document.documentElement.classList.toggle('dark')">
+<span class="material-icons-outlined dark:hidden">dark_mode</span>
+<span class="material-icons-outlined hidden dark:inline">light_mode</span>
+</button>
+</div>
+<script>
+        // Set dark mode by default as requested by prompt "adhering to the dark theme color palette"
+        // but still allow toggle
+        document.documentElement.classList.add('dark');
+    </script>
+
+</body></html>
